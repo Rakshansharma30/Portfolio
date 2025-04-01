@@ -1,0 +1,101 @@
+/* Blog Content Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Title */
+.container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Subheadings */
+.container h2, h3 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+.container p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+/* List Styles */
+.container ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.container li::before {
+    content: "✅";
+    margin-right: 8px;
+    color: #27ae60;
+}
+
+/* Links */
+.container a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Code Block Styling */
+code, pre {
+    display: block;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+/* Inline Code */
+code {
+    display: inline-block;
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Highlight Terminal Command */
+pre::before {
+    content: "$ ";
+    color: #27ae60;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Back Link Button */
+a.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a.back-link:hover {
+    background-color: #1e40af;
+}
