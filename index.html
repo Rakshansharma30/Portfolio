@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <title>Rakshan Sharma</title>
+  <link rel="shortcut icon" href="./img/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Basic show/hide for sections */
+    article {
+      display: none;
+    }
+
+    article.active {
+      display: block;
+    }
+
+    /* Temporary layout styles - will be replaced by your CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: #040303;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+    }
+
+    /* Contact form styles */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .contact-form label {
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- Sidebar Section -->
+    <aside class="sidebar">
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="img/profile.jpg" alt="Rakshan Sharma" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Rakshan Sharma">Rakshan Sharma</h1>
+          <p class="title">Cloud Engineer</p>
+        </div>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:rakshan@example.com" class="contact-link">rakshan@example.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+              <a href="tel:+917303886569" class="contact-link">+91 7303886569</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+              <time datetime="2003-12-30">December 30, 2003</time>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>Ghaziabad, Uttar Pradesh, India</address>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+
+      <!-- Navbar -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-section="about">About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-section="Resume">Resume</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-section="portfolio">Projects</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-section="contact">Contact</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sections -->
+      <article class="about active" id="about">
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+        <section class="about-text">
+          <h3>Hi,There! 👋</h3>
+          <p>
+            I'm <strong>Rakshan Sharma</strong>, a passionate B.Tech CSE student specializing in <strong>Cloud Computing</strong> at UPES, Dehradun. I thrive on developing real-world solutions that address complex challenges, whether it's:
+          </p>
+
+          <ul class="about-list">
+            <li>🚀 Designing cloud-based architectures</li>
+            <li>🤖 Building scalable AI models</li>
+            <li>⚙️ Streamlining DevOps pipelines</li>
+          </ul>
+
+          <h3>💡 Technical Expertise:</h3>
+          <p>
+            My dedication to staying ahead of technological advancements has led me to work extensively on:
+          </p>
+          <ul class="about-list">
+            <li>🧠 <strong>AI-Powered Disease Prediction Systems:</strong> Using SIR models and GIS-based conflict mapping for wildlife monitoring.</li>
+            <li>☁️ <strong>Cloud-Based Application Deployment:</strong> Implementing highly available, scalable solutions on AWS, Kubernetes, and Docker.</li>
+            <li>🔁 <strong>DevOps Automation:</strong> Developing CI/CD pipelines and managing container orchestration for seamless application delivery.</li>
+          </ul>
+
+          <h3>🌍 Adventurer at Heart:</h3>
+          <p>
+            Beyond academics, I am an avid traveler and adventure enthusiast who finds peace in exploring uncharted landscapes. Whether it's:
+          </p>
+          <ul class="about-list">
+            <li>🥾 Trekking through hidden trails</li>
+            <li>🛣️ Embarking on road trips to scenic destinations</li>
+            <li>🏍️ Riding my beloved <strong>Royal Enfield Classic 350 Reborn</strong> through highways and embracing the thrill of the open road</li>
+          </ul>
+
+          <h3>🎮 Hobbies & Interests:</h3>
+          <p>
+            When I'm not working on technical projects, I enjoy:
+          </p>
+          <ul class="about-list">
+            <li>🏸 Playing badminton to stay active and competitive</li>
+            <li>🔍 Exploring new places and planning the next exciting adventure</li>
+            <li>⛰️ Balancing my tech-driven pursuits with my love for nature and outdoor experiences</li>
+          </ul>
+
+          <h3>⚡ My Philosophy:</h3>
+          <p>
+            I firmly believe in continuous learning and pushing boundaries to stay at the forefront of innovation. Whether it's fine-tuning a DevOps pipeline, analyzing complex datasets, or planning my next thrilling adventure - I'm always ready to embrace new challenges!
+          </p>
+          <h3>Programming Languages:</h3>
+          <p>C, Python, Java</p>
+
+          <h3>Profile:</h3>
+          <p>Cloud Computing & Virtualization Technology</p>
+
+          <h3>Education:</h3>
+          <p>Bachelor of Technology</p>
+
+          <h3>Languages:</h3>
+          <p>English, Hindi</p>
+
+          <h3>Cloud Tools:</h3>
+          <p>AWS, Azure</p>
+
+          <h3>Web Development & Frameworks:</h3>
+          <p>HTML, CSS, JavaScript, AngularJS, Node.js, Flask, MongoDB</p>
+
+          <h3>Interests:</h3>
+          <p>Traveling, Photography, Chess</p>
+        </section>
+      </article>
+
+      <article class="resume" id="resume">
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <!-- ====== Education Section ====== -->
+        <section class="timeline">
+      
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+      
+            <h3 class="h3">Education</h3>
+          </div>
+      
+          <ol class="timeline-list">
+      
+            <li class="timeline-item" data-aos="fade-up">
+      
+              <h4 class="h4 timeline-item-title">University of Petroleum and Energy Studies (UPES), Dehradun</h4>
+      
+              <span>2022 — 2026 (Pursuing)</span>
+      
+              <p class="timeline-text">
+                Bachelor of Technology (B.Tech) in Computer Science - Specialization in Cloud Computing and Virtualization Technology (CCVT)
+              </p>
+      
+            </li>
+      
+            <li class="timeline-item" data-aos="fade-up">
+      
+              <h4 class="h4 timeline-item-title">Mount Litera Zee School, Ghaziabad</h4>
+      
+              <span>2021 — 2022</span>
+      
+              <p class="timeline-text">
+                Senior Secondary Education (Class XII)
+              </p>
+              <p class="timeline-text">
+                Major Subjects: Physics, Chemistry, Mathematics, Computer Science
+              </p>
+      
+            </li>
+      
+            <li class="timeline-item" data-aos="fade-up">
+      
+              <h4 class="h4 timeline-item-title">Mount Litera Zee School, Ghaziabad</h4>
+      
+              <span>2019 — 2020</span>
+      
+              <p class="timeline-text">
+                Secondary Education (Class X) — Completed with Distinction
+              </p>
+      
+            </li>
+      
+          </ol>
+      
+        </section>
+      
+        <!-- ====== Experience Section ====== -->
+        <section class="timeline">
+      
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+      
+            <h3 class="h3">Experience</h3>
+          </div>
+      
+          <ol class="timeline-list">
+      
+            <li class="timeline-item" data-aos="fade-up">
+      
+              <h4 class="h4 timeline-item-title">Social Internship at Come On India (Regd. NGO)</h4>
+      
+              <span>May 2023 — July 2023</span>
+      
+              <p class="timeline-text">
+                • Designed academic and co-curricular plans to facilitate programs for enhanced learning of children with financial issues.
+              </p>
+              <p class="timeline-text">
+                • Helped underprivileged children and communities through education, healthcare, and essential services for a brighter future.
+              </p>
+      
+            </li>
+      
+          </ol>
+      
+        </section>
+      
+        <!-- ====== Skills Section ====== -->
+        <section class="skill">
+      
+          <h3 class="h3 skills-title">My Skills</h3>
+      
+          <ul class="skills-list content-card">
+      
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Cloud Infrastructure</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+      
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">AWS & Azure Tools</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+      
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Frontend Development</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+      
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Web Development Frameworks</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+      
+          </ul>
+      
+        </section>
+      
+        <!-- ====== Resume Download Button ====== -->
+        <section class="resume-download" data-aos="fade-up">
+          <a href="ResumeR.pdf" target="_blank" class="resume-button">
+            Download Resume
+          </a>
+        </section>
+
+      </article>
+
+      <article class="portfolio" id="portfolio">
+        <header>
+          <h2 class="h2 article-title">Projects & Papers</h2>
+        </header>
+
+        <section class="projects">
+          <!-- Filter Buttons -->
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Web Projects</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>AI/ML Projects</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Docker Projects</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Research Papers</button>
+            </li>
+          </ul>
+
+          <!-- Mobile Filter Dropdown -->
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+          </div>
+
+          <!-- Projects Grid -->
+          <!-- Projects Grid -->
+<ul class="project-list">
+  <!-- Car Rental Webpage -->
+  <li class="project-item active" data-filter-item data-category="web projects">
+      <a href="https://github.com/Rakshansharma30/car_rental_webpage" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="img/car-rental.png" alt="Car Rental Webpage" loading="lazy">
+          </figure>
+          <h3 class="project-title">Car Rental Web Application</h3>
+          <p class="project-category">Web Project</p>
+          <p class="project-tech">HTML | CSS | JavaScript | Bootstrap</p>
+      </a>
+  </li>
+
+  <!-- Titanic Model -->
+  <li class="project-item active" data-filter-item data-category="ai/ml projects">
+      <a href="https://github.com/Rakshansharma30/titanic-model" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="img/titanic-model.jpg" alt="Titanic Survival Prediction" loading="lazy">
+          </figure>
+          <h3 class="project-title">Titanic Survival Prediction Model</h3>
+          <p class="project-category">AI/ML Project</p>
+          <p class="project-tech">Python | Scikit-learn | Pandas | Streamlit</p>
+      </a>
+  </li>
+
+  <!-- AI Disease Surveillance -->
+  <li class="project-item active" data-filter-item data-category="ai/ml projects">
+      <a href="https://github.com/Rakshansharma30/ai-disease-surveillance" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="img/disease-surveillance.png" alt="AI Disease Surveillance" loading="lazy">
+          </figure>
+          <h3 class="project-title">AI Disease Surveillance System</h3>
+          <p class="project-category">AI/ML Project</p>
+          <p class="project-tech">Python | TensorFlow | OpenCV | Flask</p>
+      </a>
+  </li>
+
+  <!-- Human-Animal Conflict -->
+  <li class="project-item active" data-filter-item data-category="research papers">
+      <a href="https://github.com/Rakshansharma30/human-animal-conflict" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="img/human-animal-conflict.jpg" alt="Human-Animal Conflict Research" loading="lazy">
+          </figure>
+          <h3 class="project-title">Human-Animal Conflict: Technological Solutions</h3>
+          <p class="project-category">Research Paper</p>
+          <p class="project-tech">Data Analysis | GIS Mapping | Predictive Modeling</p>
+      </a>
+  </li>
+
+  <!-- Streamlit Dashboard -->
+  <li class="project-item active" data-filter-item data-category="docker projects">
+      <a href="https://appe-dashboard-mnu2o5tmntl5wpqlubgurw.streamlit.app/" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="img/streamlit.png" alt="Streamlit Dashboard" loading="lazy">
+          </figure>
+          <h3 class="project-title">Interactive Data Dashboard</h3>
+          <p class="project-category">Docker Project</p>
+          <p class="project-tech">Python | Streamlit | Docker | Plotly</p>
+      </a>
+  </li>
+
+  <!-- Docker Yard -->
+  <li class="project-item active" data-filter-item data-category="docker projects">
+      <a href="https://github.com/Rakshansharma30/My-Docker-Dockyard" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="img/docker.png" alt="Docker Yard" loading="lazy">
+          </figure>
+          <h3 class="project-title">Docker Yard - Container Experiments</h3>
+          <p class="project-category">Docker Project</p>
+          <p class="project-tech">Docker | Kubernetes | CI/CD | Microservices</p>
+      </a>
+  </li>
+</ul>
+
+        </section>
+      </article>
+
+      <article class="contact" id="contact">
+        <header>
+          <h2 class="h2 article-title">Contact Me</h2>
+        </header>
+        <section>
+          <p>
+            Feel free to reach out to me via email or phone, or connect on my
+            social media profiles listed on the sidebar.
+          </p>
+
+          <!-- Contact Form -->
+          <section class="contact-form">
+  
+            <h3 class="h3 form-title">Contact Form</h3>
+  
+            <form action="#" class="form" data-form>
+  
+              <div class="input-wrapper">
+                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+  
+                <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              </div>
+  
+              <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+  
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+  
+            </form>
+  
+          </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- Ionicons Script -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Simple section toggling
+    const buttons = document.querySelectorAll(".navbar-link");
+    const articles = document.querySelectorAll("article");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        buttons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const section = btn.getAttribute("data-section");
+        articles.forEach((article) => {
+          article.classList.remove("active");
+          if (article.classList.contains(section.toLowerCase())) {
+            article.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
